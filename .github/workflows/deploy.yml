@@ -23,7 +23,11 @@ jobs:
       VITE_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -41,7 +45,7 @@ jobs:
         run: pnpm build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: dist
 
