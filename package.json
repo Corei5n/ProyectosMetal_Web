@@ -1,0 +1,15 @@
+{
+  "name": "proyectos-de-metal-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prebuild": "node scripts/generate-seo.mjs"
+  },
+  "devDependencies": {
+    "vite": "^5.4.8"
+  }
+}
